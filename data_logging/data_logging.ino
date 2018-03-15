@@ -1,9 +1,6 @@
-/*I going to write small code which can create one text file 
- * and store it in the SPI Flash and 
- * get those data whatever is there in text file.
+/*
  * I'm going to write small code which can create one text file 
- * and store it in the SPI Flash and we can get the get the data 
- * and print in the serial monitor. 
+ * and ask the input from the user using serial monitor and display those data in serial monitor.
  * 
  */
 
