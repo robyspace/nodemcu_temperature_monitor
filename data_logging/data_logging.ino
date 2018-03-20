@@ -1,13 +1,28 @@
-/*
+/*I going to write small code which can create one text file 
+ * and store it in the SPI Flash and 
+ * get those data whatever is there in text file.
  * I'm going to write small code which can create one text file 
- * and ask the input from the user using serial monitor and display those data in serial monitor.
+ * and store it in the SPI Flash and we can get the get the data 
+ * and print in the serial monitor. 
  * 
  */
 
 #include "FS.h"
+#include <OneWire.h>
+#include <DallasTemperature.h>
 
+#define  ONE_WIRE_BUS   2             // Define a analog pin Number for Dallas temperature 
+OneWire onewire(ONE_WIRE_BUS);        // Create an instance of OneWire  
+DallasTemperature sensors(&onewire);  // Create an instance of Dallas Temperature with reference OneWire Instance.
+
+float temp;
 File f;
+bool status1;
+String filename = "/temp_readings_spi.txt";
+String write_status;
+String read_status;
 
+//------------------------------ESP8266 SPIFFS Read Function -------------------------//
 String reading_data(String filename)
 {
   String data;
@@ -25,6 +40,7 @@ String reading_data(String filename)
       }
       else 
       {
+        Serial.println("====== Reading from SPIFFS file =========");
         int s = f.size();
         Serial.printf("Size=%d\r\n", s);
         data = f.readString();
@@ -41,17 +57,18 @@ String reading_data(String filename)
 }
 
 //------------------------------ESP8266 SPIFFS Write Function -------------------------//
-String write_temp_data(String filename)
+String write_temp_data(float temp1)
 {
-  String data;
+
    bool ok = SPIFFS.begin();                            // Starts  a SPI File System.
    if (ok) 
    {
       Serial.println("ok");
       bool exist = SPIFFS.exists(filename);
-      if (!exist) 
+      if (exist) 
       {
-        File f = SPIFFS.open(filename, "w+");
+        Serial.println("The file exists!");
+        File f = SPIFFS.open(filename, "a");
         if (!f)
         {
           Serial.println("Some thing went wrong trying to open the file...");
@@ -60,19 +77,14 @@ String write_temp_data(String filename)
         {
           Serial.println("====== Writing to SPIFFS file =========");
           //Serial.println(temp);
-          Serial.println("Enter your text");
-          if(Serial.available()>0)
-          {
-            data = Serial.read();
-          }
-          f.println(data);
+          f.println(temp1);
           f.close();
         }
         return "Write Successfully!!";
       }
       else 
       {
-        Serial.println("File Already exists!!!");
+        Serial.println("No such file found.");
         return "no file";
       }
    }
@@ -80,21 +92,22 @@ String write_temp_data(String filename)
 
 void setup() {
     // put your setup code here, to run once:
-    String filename;
+    
     Serial.begin(115200);
-  
-    Serial.println("Enter a file name you want to create: ");
-    while(Serial.available())
-    {
-      filename = Serial.readString();
-    }
-    String write_status = write_temp_data(filename);
-    Serial.println(write_status);
-    String read_status = reading_data(filename);
-    Serial.println(read_status);
+    
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-
+  sensors.begin();                     // Start temperature Sensor.
+  sensors.requestTemperatures();       // Request sensor values
+  float ptemp = sensors.getTempCByIndex(0);        
+  if(!(ptemp>=85 || ptemp <= -127))      // Ignore the invalid temperatures.
+  {
+    temp = ptemp;
+  }
+  write_status = write_temp_data(temp);
+  Serial.println(write_status);
+  read_status = reading_data(filename);
+  Serial.println(read_status);
 }
