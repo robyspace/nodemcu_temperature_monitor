@@ -4,8 +4,13 @@ Collection of Arduino sketches written for the NodeMCU. The links of the librari
 
 ## Temperature test: 
 Sketch that enables the NodeMCU to monitor the current room temperature using Dallas room temperature sensor and display it on a Serial Monitor. Below is the schematic diagram for connecting Dallas room temperature to NodeMCU. 
-<img align="center" src="https://i.imgur.com/XydiQpZ.png">
-<img align="center" src="https://i.imgur.com/x2OePJ4.png">
+<p align="center">
+  <img align="center" src="https://i.imgur.com/XydiQpZ.png">
+</p>
+<p align="center">
+ <img align="center" src="https://i.imgur.com/x2OePJ4.png">
+</p>
+
 
 This results the room temperature in the form of Celsius and Fahrenheit is displayed in the serial Monitor.  
 ## Temperature Test Server:
