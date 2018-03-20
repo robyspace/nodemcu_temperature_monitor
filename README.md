@@ -27,9 +27,11 @@ This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sk
 <p align="center"><img align="center" alt="docs logging serial monitor" src="https://i.imgur.com/JLltn3z.png?1"></p>
 
 ## Library Links:
-> [Dallas Temperature Libray :](https://github.com/milesburton/Arduino-Temperature-Control-Library)
+> [Dallas Temperature Libray](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 
 > [Temperature Data SpreadSheet Log](https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit#gid=0)
+
+> [Schematic Diagram of The All Sketches](https://www.dropbox.com/s/3bn9ozwphsut71x/Schematic_ESP8266_20180314170549.pdf?dl=0)
  
 
 
