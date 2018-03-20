@@ -25,6 +25,7 @@ This sketch interfaces Dallas Room temperature (DS18B20) to NodeMCU. By using th
 ## Temperature Docs Log:
 This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sketch, it also stores the temperature for every minute but in this time, we can store the temperature data into a Google Spreadsheets. We have an additional feature with this sketch i.e. we can get an email like alert mail from NodeMCU if the temperature readings beyond in our range like I put in code like (If temperature falls below 20C and rises above 45C).
 <p align="center"><img align="center" alt="docs logging serial monitor" src="https://i.imgur.com/JLltn3z.png?1"></p>
+
 ## Library Links:
 > [Dallas Temperature Libray :](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 > [Temperature Data SpreadSheet Log](https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit#gid=0)
