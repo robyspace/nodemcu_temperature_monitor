@@ -2,7 +2,7 @@
 
 Collection of Arduino sketches written for the NodeMCU. The links of the libraries are used in those sketches are given below. These all sketches are depending on Dallas Temperature Sensor (DS18B20).
 
-##Temperature Test:
+## Temperature test: 
 Sketch that enables the NodeMCU to monitor the current room temperature using Dallas room temperature sensor and display it on a Serial Monitor. Below is the schematic diagram for connecting Dallas room temperature to NodeMCU. 
 
 
