@@ -28,6 +28,7 @@ This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sk
 
 ## Library Links:
 > [Dallas Temperature Libray :](https://github.com/milesburton/Arduino-Temperature-Control-Library)
+
 > [Temperature Data SpreadSheet Log](https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit#gid=0)
  
 
