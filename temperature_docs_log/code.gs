@@ -39,12 +39,12 @@ function doGet(e) {
   
   // Return result of operation
   
-  if(value<25)
+  if(value<20)
   {
     sendEmail(email,lowalert,subject);
     result += "\nlow alert sent";
   }
-  else if (value>40)
+  else if (value>45)
   {
     sendEmail(email,highalert,subject);
        result += "\nhigh alert sent";
