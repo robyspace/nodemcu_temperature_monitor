@@ -35,7 +35,7 @@ In order to recieve sensor data and post it to Google spreadsheets use google sc
    	- Now the spread sheet is ready, in order to send the data you just write a code to send data to spreadsheets.
    	- Goto Tools -> Script Editor (It redirected another page).
    	- In that page we can find 'code.gs', this is the name of your script file. 
-   	- Copy that code in this link [Google script code]().
+   	- Copy that code in this link [Google script code](https://raw.githubusercontent.com/arjean80/nodemcu_temperature_monitor/master/temperature_docs_log/code.gs).
    	- Read the code and make some changes if you want.
    	- Make sure the parameters (In switch case you can find 'temperature' that should be match with spreadsheets column name) and             row numbers must be same .
      ```sh
