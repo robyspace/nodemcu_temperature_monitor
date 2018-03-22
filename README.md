@@ -23,9 +23,28 @@ This sketch interfaces Dallas Room temperature (DS18B20) to NodeMCU. By using th
 <p align="center"><img align="center" alt="data loggin serial monitor" src="https://i.imgur.com/qVumJ2h.png?1"></p>
 
 ## Temperature Docs Log:
-This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sketch, it also stores the temperature for every minute but in this time, we can store the temperature data into a Google Spreadsheets. We have an additional feature with this sketch i.e. we can get an email like alert mail from NodeMCU if the temperature readings beyond in our range like I put in code like (If temperature falls below 20C and rises above 45C).
+This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sketch, it also stores the temperature for every minute but in this time, we can store the temperature data into a Google Spreadsheets. We have an additional feature with this sketch i.e. we can get an email like `${Alert Mail}` from NodeMCU if the temperature readings beyond in our range like I put in code like (If temperature falls below 20C and rises above 45C).
 <p align="center"><img align="center" alt="docs logging serial monitor" src="https://i.imgur.com/JLltn3z.png?1"></p>
 
+In order to recieve sensor data and post it to Google spreadsheets use google script editor. See the description for how I have done.
+* ## Steps to Follow for Sending Data to Spread Sheets
+    - Go through with this link [Spreadsheets link](https://docs.google.com/spreadsheets/) and sign in with your gmail account.
+    - Create a new spreadsheet. Default name should be Untitled Spreadsheet, change it if you want.
+   	- Here I want two columns one is for date and another one is for temperature data, you can add if you want more.
+   	- Now the spread sheet is ready, in order to send the data you just write a code to send data to spreadsheets.
+   	- Goto Tools -> Script Editor (It redirected another page).
+   	- In that page we can find 'code.gs', this is the name of your script file. 
+   	- Copy that code in this link [Google script code]().
+   	- Read the code and make some changes if you want.
+   	- Make sure the parameters (In switch case you can find 'temperature' that should be match with spreadsheets column name) and             row numbers must be same .
+    - This changes should be fine for sending data.
+    
+Here we add a additional feature called `${Alert Mail}`. In the same code you can a send a mail. Here you go, how to send a notification mail from spread sheets.
+    - Enter your mail in toEmail field.
+    - Enter Subject and Messages like (I used low alert message and high alert message based on the temperature values).
+    - Edit the range whaterver you want like (I'm using less than 20 Degrees and greater than 45 Degrees temperature).
+    - With sendEmail function, you can get the mail when the temperature falls into 20Degrees and rises beyond 45 Degrees.
+     
 ## Important Links:
 > [Dallas Temperature Libray](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 
