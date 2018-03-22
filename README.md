@@ -40,11 +40,21 @@ In order to recieve sensor data and post it to Google spreadsheets use google sc
     - This changes should be fine for sending data.
     
 * Here we add a additional feature called `Alert Mail`. In the same code you can a send a mail. Here you go, how to send a notification mail from spread sheets.
-    - Enter your mail in toEmail field.
+    - Enter your mail Id in toEmail field.
+    ```sh
+    var toEmail = "saikrishnakoniki@gmail.com";
+    ```
     - Enter Subject and Messages like (I used low alert message and high alert message based on the temperature values).
+    ```sh
+    var subject = "Re: Alert from NodeMCU" ;
+  // Low alert message Body
+  var lowalert = "<html><body><p>Dear User,<br>&nbsp;&nbsp;&nbsp;&nbsp;Greetings of the day. We are informing you about that your room temperature is Critically LOW. Please check your room once. You can also check the previous room temperature reading by clicking the below link.<br><a href = \"https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit?usp=sharing\" >https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit?usp=sharing</a><br><br><p>Thank you.</p><br><br><br><p>\n\n\nSincerely,</p><p>\n<b>Vistronics Design Solutions</b>\n</p><p>10B Chowdary nagar,</p><p>\nValasaravakkam,</p><p>\nChennai, Tamilnadu.</p></p>\n</body></html>";
+  // High Alert message body.
+  var highalert = "<html><body><p>Dear User,<br>&nbsp;&nbsp;&nbsp;&nbsp;Greetings of the day. We are informing you about that your room temperature is Critically HIGH. Please check your room once. You can also check the previous room temperature reading by clicking the below link.<br><a href = \"https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit?usp=sharing\">https://docs.google.com/spreadsheets/d/1Dl0MbdmU-8bJiwInfa-9JfYPznRQXIQipkoTqbeHMNU/edit?usp=sharing</a><br><br><p>Thank you.</p><br><br><br><p>\n\n\nSincerely,</p><p>\n<b>Vistronics Design Solutions</b>\n</p><p>10B Chowdary nagar,</p><p>\nValasaravakkam,</p><p>\nChennai, Tamilnadu.</p></p>\n</body></html>";
+  
     - Edit the range whaterver you want like (I'm using less than 20 Degrees and greater than 45 Degrees temperature).
     - With sendEmail function, you can get the mail when the temperature falls into 20Degrees and rises beyond 45 Degrees.
-     
+   ```  
 ## Important Links:
 > [Dallas Temperature Libray](https://github.com/milesburton/Arduino-Temperature-Control-Library)
 
