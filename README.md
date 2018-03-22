@@ -27,7 +27,8 @@ This Sketch interfaces the DS18B20 room temperature to NodeMCU. As a previous sk
 <p align="center"><img align="center" alt="docs logging serial monitor" src="https://i.imgur.com/JLltn3z.png?1"></p>
 
 In order to recieve sensor data and post it to Google spreadsheets use google script editor. See the description for how I have done.
-* ## Steps to Follow for Sending Data to Spread Sheets
+## Steps to Follow
+* Sending Data to Spread Sheets
     - Go through with this link [Spreadsheets link](https://docs.google.com/spreadsheets/) and sign in with your gmail account.
     - Create a new spreadsheet. Default name should be Untitled Spreadsheet, change it if you want.
    	- Here I want two columns one is for date and another one is for temperature data, you can add if you want more.
